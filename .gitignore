@@ -1,0 +1,12 @@
+# macOS / exFAT metadata
+._*
+.DS_Store
+
+# local work, not part of the site
+.claude/
+_archive/
+brand-guidelines/
+portfolio/
+
+# personal photos the site no longer uses
+assets/*.webp

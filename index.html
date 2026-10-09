@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tristan Plassard — Portfolio</title>
+  <meta name="description" content="Tristan Plassard — content creator for the moto world. Shoot, edit, design.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://tristanplsrd.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tristan Plassard">
+  <meta property="og:title" content="Tristan Plassard — Portfolio">
+  <meta property="og:description" content="Content creator for the moto world. Shoot, edit, design.">
+  <meta property="og:url" content="https://tristanplsrd.github.io/">
+  <meta property="og:image" content="https://tristanplsrd.github.io/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tristan Plassard — Portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261008b">
+</head>
+<body>
+
+  <!-- Logo symbol, reused everywhere -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="logo" viewBox="276 346 528 386">
+      <path d="M312 425H465A78 78 0 0 1 543 503V726A88 88 0 0 1 455 638V505H312A30 30 0 0 1 282 475V455A30 30 0 0 1 312 425Z"/>
+      <path d="M447 352H690C770 352 797 380 797 461C797 545 770 570 700 570H625A70 70 0 0 1 555 500H662C700 500 708 488 708 462C708 436 700 423 662 423H517A70 70 0 0 1 447 352Z"/>
+    </symbol>
+  </svg>
+
+  <!-- ============ LOADER — FX3 viewfinder: boot → focus → REC → rack focus ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="ld-vf" id="ldVf">
+      <div class="ld-thirds"></div>
+      <span class="ld-corners"></span>
+      <span class="ld-recframe" id="ldRecFrame"></span>
+
+      <div class="ld-top">
+        <div><span class="ld-rec" id="ldRecTag"><i></i><b id="ldRec">STBY</b></span><span class="ld-clip">A001_C001</span></div>
+        <span class="ld-tc" id="ldTc">00:00:00:00</span>
+        <div><span class="ld-fmt">4K · 25P</span><span class="ld-batt">BATT <b></b></span></div>
+      </div>
+
+      <div class="ld-center">
+        <div class="ld-subject">
+          <svg class="ld-logo" id="ldLogo" viewBox="276 346 528 386">
+            <g class="ld-fill"><path d="M312 425H465A78 78 0 0 1 543 503V726A88 88 0 0 1 455 638V505H312A30 30 0 0 1 282 475V455A30 30 0 0 1 312 425Z"/><path d="M447 352H690C770 352 797 380 797 461C797 545 770 570 700 570H625A70 70 0 0 1 555 500H662C700 500 708 488 708 462C708 436 700 423 662 423H517A70 70 0 0 1 447 352Z"/></g>
+            <g class="ld-peak" id="ldPeak"><path d="M312 425H465A78 78 0 0 1 543 503V726A88 88 0 0 1 455 638V505H312A30 30 0 0 1 282 475V455A30 30 0 0 1 312 425Z"/><path d="M447 352H690C770 352 797 380 797 461C797 545 770 570 700 570H625A70 70 0 0 1 555 500H662C700 500 708 488 708 462C708 436 700 423 662 423H517A70 70 0 0 1 447 352Z"/></g>
+          </svg>
+          <span class="ld-af" id="ldAf"><b id="ldAfTag">AF-C</b></span>
+        </div>
+        <div class="ld-focus">
+          <div class="ld-focus-head"><span id="ldState">FOCUSING</span><span id="ldDist">∞</span><span><b id="ldPct">000</b>%</span></div>
+          <div class="ld-scale" id="ldScale"><i class="ld-dof" id="ldDof"></i><i class="ld-mark" id="ldMark"></i></div>
+          <div class="ld-nums" id="ldNums"></div>
+        </div>
+      </div>
+
+      <div class="ld-bottom">
+        <div class="ld-id"><b>TRISTAN PLASSARD</b><span>CONTENT CREATOR · MOTO</span></div>
+        <dl class="ld-expo">
+          <div><dt>SHUTTER</dt><dd>1/50</dd></div>
+          <div><dt>IRIS</dt><dd id="ldF">F16</dd></div>
+          <div><dt>ISO</dt><dd>800</dd></div>
+          <div><dt>EV</dt><dd id="ldEv">−7.0</dd></div>
+          <div class="ld-wb"><dt>WB</dt><dd>5600K</dd></div>
+        </dl>
+        <div class="ld-histo"><span>HISTOGRAM</span><div class="ld-bars" id="ldBars"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-grid bg-grid--lit"></div>
+  </div>
+
+  <div class="rail" aria-hidden="true"><i id="railFill"></i></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav-brand" aria-label="Tristan Plassard, back to top"><svg aria-hidden="true"><use href="#logo"/></svg><span>Tristan Plassard</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about" data-link>About</a>
+      <a href="#path" data-link>Path</a>
+      <a href="#videos" data-link>Videos</a>
+      <a href="#reels" data-link>Reels</a>
+      <a href="#services" data-link>Services</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero-top lbl">
+        <span>Tristan Plassard</span>
+        <span class="hero-top-mid">Content creator · Moto</span>
+        <span id="clock">Paris 00:00:00</span>
+      </div>
+      <h1 class="hero-name" aria-label="Tristan Plassard — Portfolio">
+        <span class="hn-line hn-line--logo" aria-hidden="true"><svg class="hn hero-logo"><use href="#logo"/></svg></span>
+        <span class="hn-line" aria-hidden="true"><span class="hn">Portfolio<i>.</i></span></span>
+      </h1>
+      <div class="hero-bottom">
+        <p class="hero-intro">I shoot, edit and design content for the moto world.</p>
+        <ul class="hero-tags lbl" aria-label="What I do"><li>Shoot</li><li>Edit</li><li>Design</li><li>Grow</li></ul>
+        <a href="#about" class="hero-scroll lbl">Scroll <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <!-- ============ 01 ABOUT ============ -->
+    <section class="about" id="about">
+      <div class="about-pin">
+        <header class="sec-head" data-reveal>
+          <div class="sec-meta lbl"><span><b>01</b>About</span><span>Profile</span></div>
+        </header>
+        <div class="about-grid">
+          <div class="about-l" data-reveal>
+            <h2 class="h2">Hi, I’m<br><em>Tristan.</em></h2>
+            <p class="about-lead">A content creator driven by bikes and storytelling.</p>
+            <p class="about-bio">Student at ESD, content manager at BCD Design and founder of 140' Production. I shoot, edit and design for the moto world: raw, cinematic, full of character.</p>
+          </div>
+          <figure class="about-media" data-reveal>
+            <canvas id="visor" role="img" aria-label="Tristan Plassard lifting the visor of his helmet"></canvas>
+            <figcaption class="about-cap lbl">
+              <span>Fig. 01</span>
+              <span class="visor-state" id="visorState">Scroll to lift the visor</span>
+              <i class="visor-bar" aria-hidden="true"><i id="visorBar"></i></i>
+            </figcaption>
+          </figure>
+          <div class="about-r" data-reveal>
+            <dl class="facts">
+              <div><dt class="lbl">Role</dt><dd>Content creator</dd></div>
+              <div><dt class="lbl">Content manager</dt><dd>BCD Design</dd></div>
+              <div><dt class="lbl">Founder</dt><dd>140' Production</dd></div>
+              <div><dt class="lbl">Student</dt><dd>ESD</dd></div>
+            </dl>
+            <a href="#videos" class="link">See the work <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUOTE ============ -->
+    <section class="quote" aria-label="A word from Tristan">
+      <figure class="quote-in">
+        <span class="quote-mark" aria-hidden="true" data-reveal>“</span>
+        <blockquote class="quote-text" id="quoteText">I think the best job is the one built on your passions. Mine sits right where bikes and video meet.</blockquote>
+        <figcaption class="quote-by" data-reveal><b>Tristan Plassard</b><span class="lbl">Content creator · Moto</span></figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ 02 PERSONALITY ============ -->
+    <section class="persona" id="personality">
+      <header class="sec-head" data-reveal>
+        <div class="sec-meta lbl"><span><b>02</b>Personality</span><span>Five traits</span></div>
+        <h2 class="h2">Quiet on set.<br><em>Loud on screen.</em></h2>
+      </header>
+      <ol class="traits">
+        <li class="trait" data-reveal>
+          <span class="trait-n lbl">01</span>
+          <h3 class="trait-name">Reserved</h3>
+          <p class="trait-text">I talk less and watch more. On set, I leave the space to the bikes and the people who built them.</p>
+        </li>
+        <li class="trait" data-reveal>
+          <span class="trait-n lbl">02</span>
+          <h3 class="trait-name">Persevering</h3>
+          <p class="trait-text">A shot isn’t done until it’s right. I go back as many times as it takes, in the saddle or in the timeline.</p>
+        </li>
+        <li class="trait" data-reveal>
+          <span class="trait-n lbl">03</span>
+          <h3 class="trait-name">Passionate</h3>
+          <p class="trait-text">Bikes, images, design. What I do for work is what I would do on a free Sunday.</p>
+        </li>
+        <li class="trait" data-reveal>
+          <span class="trait-n lbl">04</span>
+          <h3 class="trait-name">A good listener</h3>
+          <p class="trait-text">Every project starts with your story, not mine. I listen first, then I shoot.</p>
+        </li>
+        <li class="trait" data-reveal>
+          <span class="trait-n lbl">05</span>
+          <h3 class="trait-name">Never settles</h3>
+          <p class="trait-text">Every video is a lap. The next one has to be cleaner, sharper and better told.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ 03 NUMBERS ============ -->
+    <section class="stats" id="stats">
+      <header class="sec-head sec-head--split" data-reveal>
+        <div class="sec-meta lbl"><span><b>03</b>Numbers</span><span>@bcd.design — as of <span id="tmDate">—</span></span></div>
+        <h2 class="h2">Built to <em>perform.</em></h2>
+        <p class="sec-intro">Behind every number, a story shot, edited and pushed to the right audience.</p>
+      </header>
+
+      <div class="figures">
+        <div class="figure" data-reveal><b class="fig-num">+<span data-count="10">0</span>M</b><span class="fig-label">Views</span><span class="cap">All platforms, cumulative</span></div>
+        <div class="figure" data-reveal><b class="fig-num">+<span data-count="100">0</span></b><span class="fig-label">Videos</span><span class="cap">Published</span></div>
+        <div class="figure" data-reveal><b class="fig-num">+<span data-count="500">0</span>K</b><span class="fig-label">Likes</span><span class="cap">All platforms, cumulative</span></div>
+      </div>
+
+      <div class="tm-panels">
+        <figure class="tm-panel" id="tmLikes" data-reveal>
+          <figcaption class="tm-cap">
+            <div><h3 class="h4">Likes per video</h3><p class="cap" id="tmLikesSub"></p></div>
+            <button class="tm-toggle lbl" id="tmToggle" aria-pressed="false">Table view</button>
+          </figcaption>
+          <div class="tm-bars" id="tmBars" role="list"></div>
+          <div class="tm-table-wrap" id="tmTable" hidden></div>
+          <div class="tm-tip" id="tmTip" role="status"></div>
+        </figure>
+        <div class="tm-side">
+          <div class="tm-panel" aria-labelledby="tmSplitT" data-reveal>
+            <div class="tm-cap"><div><h3 class="h4" id="tmSplitT">Platform split</h3><p class="cap">Share of likes across the tracked videos</p></div></div>
+            <div class="tm-split" id="tmSplit"></div>
+          </div>
+          <div class="tm-panel" aria-labelledby="tmEngT" data-reveal>
+            <div class="tm-cap"><div><h3 class="h4" id="tmEngT">Engagement rate</h3><p class="cap">Likes ÷ views, where views are public</p></div></div>
+            <div class="tm-eng" id="tmEng"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 PATH — the timeline turns like a lens focus ring ============ -->
+    <section class="path" id="path">
+      <div class="path-pin">
+        <header class="sec-head" data-reveal>
+          <div class="sec-meta lbl"><span><b>04</b>Path</span><span>Turn the ring</span></div>
+          <h2 class="h2">My path, <em>in focus.</em></h2>
+        </header>
+        <div class="lens" aria-hidden="true" data-reveal>
+          <div class="lens-scale" id="lensScale"></div>
+          <div class="lens-grip" id="lensGrip"></div>
+          <span class="lens-index"></span>
+        </div>
+        <ol class="path-steps" id="pathSteps">
+          <li class="path-step" data-mark="10 y.o."><span class="lbl">01 / 05 — 10 y.o.</span><h3>Fingerskate edits</h3><p>First edits, first cuts. The obsession starts on a fingerboard.</p></li>
+          <li class="path-step" data-mark="2024"><span class="lbl">02 / 05 — 2024</span><h3>Joined ESD</h3><p>Design school. Learning the rules, to know which ones to break.</p></li>
+          <li class="path-step" data-mark="2025"><span class="lbl">03 / 05 — 2025</span><h3>Founded 140' Production</h3><p>My own label for moto films, edits and visual identities.</p></li>
+          <li class="path-step" data-mark="Now"><span class="lbl">04 / 05 — Now</span><h3>Content creator, BCD Design</h3><p>Content manager: shooting, editing and growing the brand’s socials.</p></li>
+          <li class="path-step path-step--next" data-mark="Next"><span class="lbl">05 / 05 — Next</span><h3>Our start. You &amp; me.</h3><p>The next chapter is the one we write together. Your brand could be in it.</p><a href="#contact" class="link">Start the project <span aria-hidden="true">→</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 05 LONG-FORM ============ -->
+    <section class="longform" id="videos">
+      <header class="sec-head" data-reveal>
+        <div class="sec-meta lbl"><span><b>05</b>Long-form</span><span id="lfTotal"></span></div>
+        <h2 class="h2">Long-form. <em>Real stories.</em></h2>
+      </header>
+      <div class="lf-grid">
+        <div class="lf-main" data-reveal>
+          <div class="lf-player" id="lfPlayer" role="button" tabindex="0" aria-label="Play the selected video">
+            <div class="lf-screen" id="lfScreen">
+              <img class="lf-poster" id="lfPoster" alt="">
+              <div class="lf-shade"></div>
+              <div class="lf-overlay">
+                <div class="lf-overlay-top lbl"><span id="lfTag"></span><span>YouTube</span></div>
+                <span class="lf-play" aria-hidden="true"></span>
+                <div class="lf-overlay-bottom"><h3 class="lf-title" id="lfTitle"></h3><span class="lf-dur lbl" id="lfDur"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="lf-stats" id="lfStats">
+            <div><small class="lbl">Views</small><b data-k="views">0</b></div>
+            <div><small class="lbl">Likes</small><b data-k="likes">0</b></div>
+            <div><small class="lbl">Runtime</small><b data-k="duration">0:00</b></div>
+            <div><small class="lbl">Published</small><b data-k="date">—</b></div>
+            <a class="link lf-ext" id="lfExt" href="#" target="_blank" rel="noopener">Watch on YouTube <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <ol class="lf-list" id="lfList" data-reveal></ol>
+      </div>
+    </section>
+
+    <!-- ============ 06 REELS ============ -->
+    <section class="reels" id="reels">
+      <header class="sec-head" data-reveal>
+        <div class="sec-meta lbl"><span><b>06</b>Reels</span><span id="reelsTotal"></span></div>
+        <h2 class="h2">Short. Sharp. <em>Loud.</em></h2>
+      </header>
+      <div class="lf-grid rl-grid">
+        <div class="rl-main" data-reveal>
+          <div class="lf-player rl-player" id="rlPlayer" role="button" tabindex="0" aria-label="Play the selected reel">
+            <div class="lf-screen rl-screen">
+              <img class="lf-poster" id="rlPoster" alt="">
+              <div class="lf-shade"></div>
+              <div class="lf-overlay">
+                <div class="lf-overlay-top lbl"><span id="rlTag"></span><span id="rlPlat"></span></div>
+                <span class="lf-play" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+          <div class="rl-stats" id="rlStats">
+            <span class="lbl" id="rlIndex"></span>
+            <h3 class="rl-title" id="rlTitle"></h3>
+            <dl>
+              <div data-k="views"><dt class="lbl">Views</dt><dd>0</dd></div>
+              <div data-k="likes"><dt class="lbl">Likes</dt><dd>0</dd></div>
+              <div data-k="comments"><dt class="lbl">Comments</dt><dd>0</dd></div>
+              <div data-k="shares"><dt class="lbl">Shares</dt><dd>0</dd></div>
+              <div data-k="date"><dt class="lbl">Published</dt><dd>—</dd></div>
+            </dl>
+            <a class="link" id="rlExt" href="#" target="_blank" rel="noopener">Watch on Instagram <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="rl-side" data-reveal>
+          <ol class="lf-list rl-list" id="rlList"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 07 SERVICES — one lap of the Bugatti circuit, one stage per stop ============ -->
+    <section class="services" id="services">
+      <div class="svc-pin">
+        <header class="sec-head" data-reveal>
+          <div class="sec-meta lbl"><span><b>07</b>Services</span><span>Five stages, one lap</span></div>
+        </header>
+        <div class="svc-grid">
+          <figure class="lap-map" data-reveal>
+            <div class="lap-track">
+              <!-- Circuit Bugatti, Le Mans — traced from OpenStreetMap (© OpenStreetMap contributors, ODbL) -->
+              <svg class="track" viewBox="0 0 710 1040" aria-hidden="true">
+                <path class="track-base" d="M25.0 856.4L33.5 604.6 38.9 550.3 52.6 480.2 68.0 426.2 87.5 376.3 95.0 361.9 104.7 347.7 116.7 334.2 128.7 324.1 232.5 259.6 236.1 254.1 237.2 247.1 229.8 210.0 231.8 203.0 235.8 197.3 337.6 131.8 355.4 119.1 373.2 101.1 401.9 59.7 413.0 46.3 429.0 32.0 447.8 22.4 462.5 20.0 479.5 21.3 491.5 25.7 503.0 34.7 511.2 46.3 515.9 60.2 517.3 74.9 513.7 92.2 508.3 102.1 488.4 127.7 467.0 151.9 449.5 169.5 410.7 203.8 350.7 250.9 327.8 272.8 322.4 283.3 320.1 295.4 321.9 307.1 327.1 317.3 333.5 324.2 341.2 328.9 350.0 331.6 360.9 332.4 380.6 330.4 392.7 327.6 418.2 317.1 440.1 301.8 463.2 281.0 560.1 182.5 637.1 94.2 644.5 88.5 658.1 87.2 662.9 88.4 667.3 91.5 687.7 112.3 690.1 120.7 689.1 129.5 681.1 140.8 512.7 335.2 378.5 505.2 335.2 562.3 329.6 578.9 329.9 592.6 334.6 604.1 345.9 617.3 351.7 628.3 354.0 642.6 353.0 657.2 292.5 860.8 286.2 877.9 280.1 887.2 271.8 894.1 261.1 897.9 249.6 899.1 236.2 898.0 226.2 893.7 189.1 862.7 179.1 857.6 170.3 855.7 159.4 855.5 150.8 857.2 140.5 862.2 128.0 872.7 119.4 887.9 103.7 938.1 83.5 1012.9 79.8 1017.9 72.9 1020.0 28.2 1009.6 23.2 1006.3 20.4 1001.3Z"/>
+                <path class="track-line" id="trackLine" d="M25.0 856.4L33.5 604.6 38.9 550.3 52.6 480.2 68.0 426.2 87.5 376.3 95.0 361.9 104.7 347.7 116.7 334.2 128.7 324.1 232.5 259.6 236.1 254.1 237.2 247.1 229.8 210.0 231.8 203.0 235.8 197.3 337.6 131.8 355.4 119.1 373.2 101.1 401.9 59.7 413.0 46.3 429.0 32.0 447.8 22.4 462.5 20.0 479.5 21.3 491.5 25.7 503.0 34.7 511.2 46.3 515.9 60.2 517.3 74.9 513.7 92.2 508.3 102.1 488.4 127.7 467.0 151.9 449.5 169.5 410.7 203.8 350.7 250.9 327.8 272.8 322.4 283.3 320.1 295.4 321.9 307.1 327.1 317.3 333.5 324.2 341.2 328.9 350.0 331.6 360.9 332.4 380.6 330.4 392.7 327.6 418.2 317.1 440.1 301.8 463.2 281.0 560.1 182.5 637.1 94.2 644.5 88.5 658.1 87.2 662.9 88.4 667.3 91.5 687.7 112.3 690.1 120.7 689.1 129.5 681.1 140.8 512.7 335.2 378.5 505.2 335.2 562.3 329.6 578.9 329.9 592.6 334.6 604.1 345.9 617.3 351.7 628.3 354.0 642.6 353.0 657.2 292.5 860.8 286.2 877.9 280.1 887.2 271.8 894.1 261.1 897.9 249.6 899.1 236.2 898.0 226.2 893.7 189.1 862.7 179.1 857.6 170.3 855.7 159.4 855.5 150.8 857.2 140.5 862.2 128.0 872.7 119.4 887.9 103.7 938.1 83.5 1012.9 79.8 1017.9 72.9 1020.0 28.2 1009.6 23.2 1006.3 20.4 1001.3Z"/>
+                <line class="track-sf" x1="7.0" y1="856.4" x2="43.0" y2="856.4"/>
+                <circle class="track-bike" id="trackBike" r="10" cx="25.0" cy="856.4"/>
+              </svg>
+              <span class="lap-pt lap-pt--start lbl" data-side="r" style="--x:3.52;--y:82.35"><span>01<em> Idea</em></span></span>
+              <span class="lap-pt lbl" data-side="l" style="--x:32.45;--y:20.84"><span>02<em> Shoot</em></span></span>
+              <span class="lap-pt lbl" data-side="b" style="--x:51.31;--y:31.95"><span>03<em> Edit</em></span></span>
+              <span class="lap-pt lbl" data-side="r" style="--x:95.98;--y:10.11"><span>04<em> Design</em></span></span>
+              <span class="lap-pt lbl" data-side="r" style="--x:47.31;--y:58.27"><span>05<em> Grow</em></span></span>
+            </div>
+            <figcaption class="lap-cap lbl">
+              <span>Fig. 02 — Circuit Bugatti, Le Mans</span>
+              <span class="lap-dist" id="lapDist">0.000 km</span>
+              <i class="visor-bar" aria-hidden="true"><i id="lapBar"></i></i>
+            </figcaption>
+          </figure>
+
+          <div class="svc-stage">
+            <h2 class="h2" data-reveal>From your idea <em>to the feed.</em></h2>
+            <div class="svc-stops" data-reveal>
+            <article class="svc-stop">
+              <span class="lbl svc-stop-n">01 / 05 — Start line</span>
+              <h3 class="svc-stop-t">Idea</h3>
+              <p class="svc-desc">It starts with your idea. We talk it through, analyse it and sharpen it before anything gets filmed.</p>
+              <div class="svc-detail">
+                <div class="svc-mid">
+                  <div><span class="lbl">Workflow</span><ol class="svc-steps"><li>Your idea</li><li>Discuss</li><li>Analyse</li><li>Optimise</li></ol></div>
+                  <dl class="svc-kit"><div><dt class="lbl">Format</dt><dd>Call or meeting</dd></div><div><dt class="lbl">Deliverables</dt><dd>Brief, moodboard, shot list</dd></div><div><dt class="lbl">Goal</dt><dd>One clear story to tell</dd></div></dl>
+                </div>
+                <div class="svc-proof"><b>1 idea</b><small class="cap">That’s all it takes to start</small><a href="#contact" class="link">Share yours <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+            <article class="svc-stop">
+              <span class="lbl svc-stop-n">02 / 05 — Dunlop</span>
+              <h3 class="svc-stop-t">Shoot</h3>
+              <p class="svc-desc">Rolling shots, details, POV. Camera in hand or on the bike, always where the action is.</p>
+              <div class="svc-detail">
+                <div class="svc-mid">
+                  <div><span class="lbl">Workflow</span><ol class="svc-steps"><li>Plan</li><li>Scout</li><li>Shoot</li><li>Backup</li></ol></div>
+                  <dl class="svc-kit"><div><dt class="lbl">Camera A</dt><dd>Sony FX3</dd></div><div><dt class="lbl">Camera B</dt><dd>DJI Osmo Pocket 4</dd></div><div><dt class="lbl">Deliverables</dt><dd>Video, photo, interviews</dd></div></dl>
+                </div>
+                <div class="svc-proof"><b>4K</b><small class="cap">Up to 120p on the FX3</small><a href="#reels" class="link">See the reels <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+            <article class="svc-stop">
+              <span class="lbl svc-stop-n">03 / 05 — Musée</span>
+              <h3 class="svc-stop-t">Edit</h3>
+              <p class="svc-desc">Rhythm, sound design, color. Short formats built for the algorithm, long formats built for the story.</p>
+              <div class="svc-detail">
+                <div class="svc-mid">
+                  <div><span class="lbl">Workflow</span><ol class="svc-steps"><li>Selects</li><li>Rough cut</li><li>Sound</li><li>Color</li><li>Export</li></ol></div>
+                  <dl class="svc-kit"><div><dt class="lbl">Software</dt><dd>Premiere Pro, After Effects</dd></div><div><dt class="lbl">Formats</dt><dd>Reels, long-form</dd></div><div><dt class="lbl">Delivery</dt><dd>Instagram, TikTok, YouTube</dd></div></dl>
+                </div>
+                <div class="svc-proof"><b data-stat="lfViews">—</b><small class="cap">Long-form views</small><a href="#videos" class="link">Watch long-form <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+            <article class="svc-stop">
+              <span class="lbl svc-stop-n">04 / 05 — Garage Vert</span>
+              <h3 class="svc-stop-t">Design</h3>
+              <p class="svc-desc">Identities, thumbnails, motion. A visual language as sharp as the content behind it.</p>
+              <div class="svc-detail">
+                <div class="svc-mid">
+                  <div><span class="lbl">Workflow</span><ol class="svc-steps"><li>Concept</li><li>Layout</li><li>Thumbnail</li><li>Motion</li></ol></div>
+                  <dl class="svc-kit"><div><dt class="lbl">Software</dt><dd>Photoshop, After Effects</dd></div><div><dt class="lbl">AI</dt><dd>Higgsfield, Claude</dd></div><div><dt class="lbl">Output</dt><dd>Thumbnails, apparel, brand kits</dd></div></dl>
+                </div>
+                <div class="svc-proof"><b>95</b><small class="cap">Design skill / 100</small><a href="#toolkit" class="link">See the kit <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+            <article class="svc-stop">
+              <span class="lbl svc-stop-n">05 / 05 — Chemin aux Bœufs</span>
+              <h3 class="svc-stop-t">Grow</h3>
+              <p class="svc-desc">Strategy, posting, community. Content that reaches the right riders at the right time.</p>
+              <div class="svc-detail">
+                <div class="svc-mid">
+                  <div><span class="lbl">Workflow</span><ol class="svc-steps"><li>Plan</li><li>Post</li><li>Measure</li><li>Iterate</li></ol></div>
+                  <dl class="svc-kit"><div><dt class="lbl">Platforms</dt><dd>Instagram, TikTok, YouTube</dd></div><div><dt class="lbl">Account</dt><dd>@bcd.design</dd></div><div><dt class="lbl">Loop</dt><dd>Weekly review</dd></div></dl>
+                </div>
+                <div class="svc-proof"><b data-stat="allLikes">—</b><small class="cap">Likes</small><a href="#stats" class="link">See the numbers <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+            <article class="svc-stop svc-stop--finish">
+              <span class="lbl svc-stop-n">Finish line</span>
+              <h3 class="svc-stop-t">On the feed.</h3>
+              <p class="svc-desc">Published, measured, and already thinking about the next lap. Your project could be the next one on the grid.</p>
+              <a href="#contact" class="link">Start your lap <span aria-hidden="true">→</span></a>
+            </article>
+            </div>
+            <div class="svc-index" role="group" aria-label="Jump to a stage" data-reveal>
+              <button type="button">01 Idea</button><button type="button">02 Shoot</button><button type="button">03 Edit</button><button type="button">04 Design</button><button type="button">05 Grow</button><button type="button">Finish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 08 KIT ============ -->
+    <section class="toolkit" id="toolkit">
+      <header class="sec-head sec-head--split" data-reveal>
+        <div class="sec-meta lbl"><span><b>08</b>Kit</span><span>Skills self-assessed / 100</span></div>
+        <h2 class="h2">The <em>kit.</em></h2>
+        <p class="sec-intro">The software I edit and design with, and the two cameras that go everywhere with me.</p>
+      </header>
+
+      <div class="skills">
+        <div class="skill" data-reveal style="--v:92"><span class="lbl">Editing</span><b data-value="92">0</b><i class="skill-bar"><i></i></i></div>
+        <div class="skill" data-reveal style="--v:85"><span class="lbl">Filming</span><b data-value="85">0</b><i class="skill-bar"><i></i></i></div>
+        <div class="skill" data-reveal style="--v:95"><span class="lbl">Design</span><b data-value="95">0</b><i class="skill-bar"><i></i></i></div>
+        <div class="skill" data-reveal style="--v:70"><span class="lbl">Motion</span><b data-value="70">0</b><i class="skill-bar"><i></i></i></div>
+      </div>
+
+      <div class="tools" role="table" aria-label="Software" data-reveal>
+        <div class="tool tool--head lbl" role="row"><span role="columnheader">Software</span><span role="columnheader">Used for</span><span role="columnheader">Level</span></div>
+        <div class="tool" role="row"><span class="tool-name" role="cell"><span class="tool-ico">Pr</span>Premiere Pro</span><span class="tool-use" role="cell">Editing, multicam, sound, color</span><span class="tool-lvl" role="cell">92</span></div>
+        <div class="tool" role="row"><span class="tool-name" role="cell"><span class="tool-ico">Ps</span>Photoshop</span><span class="tool-use" role="cell">Thumbnails, retouch, key visuals</span><span class="tool-lvl" role="cell">95</span></div>
+        <div class="tool" role="row"><span class="tool-name" role="cell"><span class="tool-ico">Ae</span>After Effects</span><span class="tool-use" role="cell">Motion, titles, VFX</span><span class="tool-lvl" role="cell">70</span></div>
+        <div class="tool" role="row"><span class="tool-name" role="cell"><span class="tool-ico"><svg viewBox="-50 -50 100 100" aria-hidden="true"><g stroke="currentColor" stroke-linecap="round"><line x1="0" y1="0" x2="39.6" y2="5.6" stroke-width="9"/><line x1="0" y1="0" x2="23.6" y2="18.5" stroke-width="7"/><line x1="0" y1="0" x2="15.7" y2="38.9" stroke-width="9"/><line x1="0" y1="0" x2="-3.9" y2="27.7" stroke-width="7"/><line x1="0" y1="0" x2="-23.4" y2="29.9" stroke-width="9"/><line x1="0" y1="0" x2="-30.6" y2="12.4" stroke-width="7"/><line x1="0" y1="0" x2="-43.6" y2="-6.1" stroke-width="9"/><line x1="0" y1="0" x2="-22.9" y2="-17.9" stroke-width="7"/><line x1="0" y1="0" x2="-13.5" y2="-33.4" stroke-width="9"/><line x1="0" y1="0" x2="4.3" y2="-30.7" stroke-width="7"/><line x1="0" y1="0" x2="25.2" y2="-32.3" stroke-width="9"/><line x1="0" y1="0" x2="25.0" y2="-10.1" stroke-width="7"/></g></svg></span>Claude</span><span class="tool-use" role="cell">Scripts, ideas, workflow</span><span class="tool-lvl" role="cell">AI</span></div>
+        <div class="tool" role="row"><span class="tool-name" role="cell"><span class="tool-ico">Hf</span>Higgsfield</span><span class="tool-use" role="cell">AI video, shots, concepts</span><span class="tool-lvl" role="cell">AI</span></div>
+      </div>
+
+      <div class="gear">
+        <article class="bp-card">
+          <div class="bp-head lbl"><span>Camera A — Cinema</span><span>Sony</span></div>
+          <h3 class="bp-title">Sony FX3</h3>
+          <svg class="bp" viewBox="0 0 340 230" aria-hidden="true">
+            <g class="bp-draw">
+              <path d="M60 60h214a12 12 0 0 1 12 12v118a12 12 0 0 1-12 12H60a12 12 0 0 1-12-12V72a12 12 0 0 1 12-12Z" pathLength="1"/>
+              <path d="M48 84c-14 2-20 14-20 34v52c0 16 8 28 20 32" pathLength="1"/>
+              <path d="M150 60V46h70v14" pathLength="1"/>
+              <path d="M232 60v-8h40v8M100 60v-6h30v6" pathLength="1"/>
+              <circle cx="190" cy="132" r="54" pathLength="1"/>
+              <circle cx="190" cy="132" r="44" pathLength="1"/>
+              <path d="M258 74h16M258 80h16M258 86h16M258 92h16" pathLength="1"/>
+              <circle cx="72" cy="78" r="5" pathLength="1"/>
+            </g>
+            <rect class="bp-part" data-part="sensor" x="166" y="116" width="48" height="32" rx="2"/>
+            <circle class="bp-part bp-ring" data-part="mount" cx="190" cy="132" r="54"/>
+            <path class="bp-part bp-lines" data-part="cooling" d="M258 74h16M258 80h16M258 86h16M258 92h16"/>
+            <g class="bp-dims">
+              <path d="M48 216h238M48 210v12M286 210v12" pathLength="1"/>
+              <path d="M306 60v142M300 60h12M300 202h12" pathLength="1"/>
+              <text x="167" y="228" text-anchor="middle">129.7 mm</text>
+              <text x="316" y="135" transform="rotate(90 316 135)" text-anchor="middle">77.8 mm</text>
+            </g>
+          </svg>
+          <dl class="bp-specs"><div class="bp-row" data-part="sensor"><dt class="lbl">Sensor</dt><dd>Full-frame Exmor R CMOS · 12.1 MP</dd></div><div class="bp-row" data-part="mount"><dt class="lbl">Mount</dt><dd>Sony E-mount</dd></div><div class="bp-row"><dt class="lbl">Video</dt><dd>4K up to 120p · FHD 240p</dd></div><div class="bp-row"><dt class="lbl">Dynamic range</dt><dd>15+ stops</dd></div><div class="bp-row"><dt class="lbl">Profiles</dt><dd>S-Log3 · S-Cinetone</dd></div><div class="bp-row"><dt class="lbl">ISO</dt><dd>80 – 102,400 (exp. 409,600)</dd></div><div class="bp-row"><dt class="lbl">Stabilization</dt><dd>5-axis IBIS · Active mode</dd></div><div class="bp-row" data-part="cooling"><dt class="lbl">Cooling</dt><dd>Built-in fan</dd></div></dl>
+        </article>
+        <article class="bp-card">
+          <div class="bp-head lbl"><span>Camera B — POV / Gimbal</span><span>DJI</span></div>
+          <h3 class="bp-title">DJI Osmo Pocket 4</h3>
+          <svg class="bp" viewBox="0 0 340 230" aria-hidden="true">
+            <g class="bp-draw">
+              <rect x="140" y="78" width="60" height="140" rx="18" pathLength="1"/>
+              <rect x="152" y="98" width="36" height="58" rx="5" pathLength="1"/>
+              <circle cx="170" cy="182" r="8" pathLength="1"/>
+              <path d="M170 78V64" pathLength="1"/>
+              <path d="M142 48a28 22 0 0 1 56 0v6a10 10 0 0 1-10 10h-36a10 10 0 0 1-10-10Z" pathLength="1"/>
+              <circle cx="170" cy="44" r="13" pathLength="1"/>
+              <circle cx="170" cy="44" r="7" pathLength="1"/>
+              <path d="M128 50h-8M212 50h8" pathLength="1"/>
+            </g>
+            <rect class="bp-part" data-part="screen" x="152" y="98" width="36" height="58" rx="5"/>
+            <circle class="bp-part" data-part="lens" cx="170" cy="44" r="13"/>
+            <path class="bp-part" data-part="gimbal" d="M142 48a28 22 0 0 1 56 0v6a10 10 0 0 1-10 10h-36a10 10 0 0 1-10-10Z"/>
+            <g class="bp-dims">
+              <path d="M240 26v192M234 26h12M234 218h12" pathLength="1"/>
+              <path d="M140 226h60M140 220v12M200 220v12" pathLength="1"/>
+              <text x="252" y="122" transform="rotate(90 252 122)" text-anchor="middle">144.2 mm</text>
+              <text x="132" y="229" text-anchor="end">44.4 mm</text>
+            </g>
+          </svg>
+          <dl class="bp-specs"><div class="bp-row" data-part="lens"><dt class="lbl">Sensor</dt><dd>1-inch CMOS</dd></div><div class="bp-row" data-part="lens"><dt class="lbl">Lens</dt><dd>20 mm eq. · f/2.0</dd></div><div class="bp-row"><dt class="lbl">Video</dt><dd>4K up to 60p · slow-mo 4K 240p</dd></div><div class="bp-row" data-part="gimbal"><dt class="lbl">Gimbal</dt><dd>3-axis · ±0.005° vibration</dd></div><div class="bp-row"><dt class="lbl">ISO</dt><dd>50 – 12,800 (25,600 low light)</dd></div><div class="bp-row" data-part="screen"><dt class="lbl">Screen</dt><dd>2.0" touch · 1,000 nits</dd></div><div class="bp-row"><dt class="lbl">Battery</dt><dd>240 min · 80% in 18 min</dd></div><div class="bp-row"><dt class="lbl">Weight</dt><dd>190.5 g</dd></div></dl>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 09 CONTACT ============ -->
+    <section class="contact" id="contact">
+      <header class="sec-head" data-reveal>
+        <div class="sec-meta lbl"><span><b>09</b>Contact</span><span>Available for new projects</span></div>
+        <h2 class="h2 contact-title">Ready to <em>ride?</em></h2>
+      </header>
+      <div class="contact-body">
+        <div class="contact-main" data-reveal>
+          <p class="contact-sub">Brand, team, event or crazy idea. Let’s make something loud.</p>
+          <button class="mail" id="mailBtn" data-mail="tristanplsrd@gmail.com" aria-label="Copy email address tristanplsrd@gmail.com">
+            <span class="mail-text">tristanplsrd@gmail.com</span>
+            <span class="mail-copied lbl" aria-live="polite">Copied</span>
+          </button>
+        </div>
+        <ul class="socials" data-reveal>
+          <li><a href="https://www.instagram.com/bcd.design/" target="_blank" rel="noopener" class="social"><span class="lbl">Instagram</span><span>@bcd.design <span aria-hidden="true">↗</span></span></a></li>
+          <li><a href="https://www.youtube.com/results?search_query=BCD+Design" target="_blank" rel="noopener" class="social"><span class="lbl">YouTube</span><span>BCD Design <span aria-hidden="true">↗</span></span></a></li>
+          <li><a href="https://www.linkedin.com/in/tristan-plassard/" target="_blank" rel="noopener" class="social"><span class="lbl">LinkedIn</span><span>Tristan Plassard <span aria-hidden="true">↗</span></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer lbl">
+      <span>© 2026 Tristan Plassard</span>
+      <span class="footer-mid">Designed and built with full throttle</span>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </main>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lb-backdrop" data-close></div>
+    <div class="lb-box" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+      <div class="lb-bar lbl"><span id="lbTitle"></span><a id="lbExt" href="#" target="_blank" rel="noopener">Open ↗</a><button class="lb-close" data-close aria-label="Close">✕</button></div>
+      <div class="lb-frame" id="lbFrame"></div>
+    </div>
+  </div>
+
+  <script src="data.js?v=20261007"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="main.js?v=20261008a"></script>
+</body>
+</html>
